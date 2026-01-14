@@ -1,0 +1,13 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>Générer une quittance pour {{ locataire }}</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Générer la quittance" class="default">
+</form>
+
+<a href="{% url 'admin:locataires_locataire_changelist' %}">← Retour aux locataires</a>
+{% endblock %}

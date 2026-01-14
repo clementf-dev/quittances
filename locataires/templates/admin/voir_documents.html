@@ -1,0 +1,18 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>Documents de {{ locataire }}</h1>
+
+<ul>
+    {% for doc in documents %}
+        <li>
+            <a href="{{ doc.fichier.url }}" target="_blank">{{ doc.fichier.name }}</a>
+            {% if doc.description %}- {{ doc.description }}{% endif %}
+        </li>
+    {% empty %}
+        <li>Aucun document pour ce locataire.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'admin:locataires_locataire_changelist' %}">← Retour aux locataires</a>
+{% endblock %}

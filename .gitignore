@@ -1,4 +1,25 @@
+# Python
 __pycache__/
-*.db
+*.pyc
+*.pyo
 .venv/
+venv/
+
+# IDE
 .vscode/
+.idea/
+
+# Database
+*.db
+db.sqlite3
+
+# Build / Distribution (PyInstaller)
+build/
+dist/
+*.spec
+
+# Media uploads
+media/
+
+# Environment
+.env
